@@ -1,11 +1,16 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(
     name="askdev",
-    version="0.1.0",
+    version="1.0.0",
+    description="Android Error CLI Assistant",
+    author="askdev contributors",
+    packages=find_packages(),
     py_modules=["app"],
     install_requires=[
         "typer[all]",
+        "python-dotenv",
+        "requests",
         "rich"
     ],
     entry_points={
@@ -13,10 +18,7 @@ setup(
             "askdev=app:run_main"
         ]
     },
-    author="Divyanshu",
-    author_email="divyanshu@example.com",
-    description="Android Error CLI Assistant: Explain and fix Android errors from your terminal.",
-    long_description=open("README.md").read() if __import__('os').path.exists('README.md') else "",
-    long_description_content_type="text/markdown",
-    python_requires=">=3.8",
+    include_package_data=True,
+    package_data={"": ["error_db.json"]},
+    python_requires=">=3.7",
 )
