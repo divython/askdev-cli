@@ -16,23 +16,35 @@ askdev is a command-line tool for Android developers to quickly diagnose, explai
 git clone https://github.com/divython/askdev-cli
 cd askdev-cli/app
 pip install .
-copy .env .env.local
+cp .env.example .env
 ```
-- Edit `.env.local` and add your own API keys if you want AI-powered fixes.
+- Edit `.env` and add your `ASKDEV_API_KEY` if you want to use AI-powered suggestions.
 
 ## Usage
-- To analyze and fix errors from a log file:
-  ```sh
-  askdev fix error.log --project-root .
-  ```
-- To preview both rule-based and AI-powered fixes (if API key provided):
-  ```sh
-  askdev fix error.log --ai --project-root .
-  ```
-- To see all commands:
-  ```sh
-  askdev --help
-  ```
+
+### Analyze and Fix Errors
+
+To analyze and fix errors from a log file:
+```sh
+askdev fix error.log --project-root .
+```
+
+To get AI-powered suggestions (requires `ASKDEV_API_KEY` in your `.env` file):
+```sh
+askdev fix error.log --ai
+```
+
+### Look Up Error Codes
+
+To look up a specific error code from the local database:
+```sh
+askdev lookup 404
+```
+
+To see all commands:
+```sh
+askdev --help
+```
 
 ## Android Studio Integration
 - Open the terminal in Android Studio.
@@ -41,7 +53,7 @@ copy .env .env.local
 
 ## Security
 - **Never commit your real API keys to public repositories!**
-- Only use the provided `.env` template for sharing.
+- Use the provided `.env.example` for guidance.
 
 ## License
 MIT License. See [LICENSE](LICENSE).

@@ -2,20 +2,26 @@ Metadata-Version: 2.4
 Name: askdev
 Version: 1.0.0
 Summary: Android Error CLI Assistant: Explain and fix Android errors from your terminal.
-Home-page: https://github.com/divython/askdev-cli
-Author: askdev contributors
 Author-email: askdev contributors <your@email.com>
-Requires-Python: >=3.7
+Project-URL: Homepage, https://github.com/divython/askdev-cli
+Keywords: android,error,cli,ai,fix,log,stacktrace
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: Topic :: Software Development :: Libraries :: Application Frameworks
+Classifier: Topic :: Software Development :: Bug Tracking
+Classifier: Topic :: Utilities
+Requires-Python: >=3.8
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: typer[all]
 Requires-Dist: python-dotenv
 Requires-Dist: requests
 Requires-Dist: rich
-Dynamic: author
-Dynamic: home-page
+Provides-Extra: dev
+Requires-Dist: pytest; extra == "dev"
 Dynamic: license-file
-Dynamic: requires-python
 
 # askdev: Android Error CLI Assistant
 

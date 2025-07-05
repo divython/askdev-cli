@@ -1,7 +1,6 @@
 LICENSE
 README.md
 pyproject.toml
-setup.py
 askdev/__init__.py
 askdev/cli.py
 askdev.egg-info/PKG-INFO
@@ -10,3 +9,8 @@ askdev.egg-info/dependency_links.txt
 askdev.egg-info/entry_points.txt
 askdev.egg-info/requires.txt
 askdev.egg-info/top_level.txt
+askdev/core/__init__.py
+askdev/core/engine.py
+askdev/tui/__init__.py
+askdev/tui/prompts.py
+tests/test_engine.py

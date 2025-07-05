@@ -2,3 +2,6 @@ typer[all]
 python-dotenv
 requests
 rich
+
+[dev]
+pytest

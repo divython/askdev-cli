@@ -1,1 +1,3 @@
 askdev
+dist
+tests

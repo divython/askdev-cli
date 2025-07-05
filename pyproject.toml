@@ -17,7 +17,29 @@ dependencies = [
     "requests",
     "rich"
 ]
+classifiers=[
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Application Frameworks",
+    "Topic :: Software Development :: Bug Tracking",
+    "Topic :: Utilities"
+]
+keywords=["android", "error", "cli", "ai", "fix", "log", "stacktrace"]
+
+[project.urls]
+"Homepage" = "https://github.com/divython/askdev-cli"
 
 [project.scripts]
 askdev = "askdev.cli:run_main"
 ad = "askdev.cli:run_main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[project.optional-dependencies]
+dev = ["pytest"]
