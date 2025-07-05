@@ -7,7 +7,7 @@ name = "askdev"
 version = "1.0.1"
 description = "Android Error CLI Assistant: Explain and fix Android errors from your terminal."
 authors = [
-    { name = "askdev contributors", email = "your@email.com" }
+    { name = "Divyanshu Chaudhary", email = "divyanshu270203@gmail.com" }
 ]
 readme = "README.md"
 requires-python = ">=3.8"
