@@ -12,32 +12,32 @@ askdev is a command-line tool for Android developers to quickly diagnose, explai
 
 ## Installation
 1. Clone this repository:
-   ```
+   ```sh
    git clone <repo-url>
    cd app
    ```
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
+2. Install with pip (from the project root):
+   ```sh
+   pip install .
    ```
 3. Copy `.env` and add your own API keys (optional for AI):
-   ```
+   ```sh
    cp .env .env.local
    # Edit .env.local and add your API keys
    ```
 
 ## Usage
 - Analyze and fix errors from a log file:
-  ```
-  python app.py fix error.log --project-root .
+  ```sh
+  askdev fix error.log --project-root .
   ```
 - Preview both rule-based and AI-powered fixes (if API key provided):
-  ```
-  python app.py fix error.log --ai --project-root .
+  ```sh
+  askdev fix error.log --ai --project-root .
   ```
 - See all commands:
-  ```
-  python app.py --help
+  ```sh
+  askdev --help
   ```
 
 ## Android Studio Integration
