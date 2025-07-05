@@ -11,8 +11,7 @@ setup(
     long_description_content_type="text/markdown",
     author="askdev contributors",
     url="https://github.com/divython/askdev-cli",
-    packages=find_packages(),
-    py_modules=["app"],
+    packages=["askdev"],
     install_requires=[
         "typer[all]",
         "python-dotenv",
@@ -21,8 +20,8 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "askdev=app:run_main",
-            "ad=app:run_main"
+            "askdev=askdev.cli:run_main",
+            "ad=askdev.cli:run_main"
         ]
     },
     include_package_data=True,

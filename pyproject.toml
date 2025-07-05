@@ -4,17 +4,20 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "askdev"
-version = "0.1.0"
+version = "1.0.0"
 description = "Android Error CLI Assistant: Explain and fix Android errors from your terminal."
 authors = [
-    { name = "Your Name", email = "your@email.com" }
+    { name = "askdev contributors", email = "your@email.com" }
 ]
 readme = "README.md"
 requires-python = ">=3.8"
 dependencies = [
     "typer[all]",
+    "python-dotenv",
+    "requests",
     "rich"
 ]
 
 [project.scripts]
-askdev = "app:run_main"
+askdev = "askdev.cli:run_main"
+ad = "askdev.cli:run_main"

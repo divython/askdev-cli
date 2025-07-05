@@ -1,8 +1,0 @@
-FATAL EXCEPTION: main
-Process: com.example.app, PID: 12345
-java.lang.NullPointerException: Attempt to invoke virtual method 'int java.lang.String.length()' on a null object reference
-    at com.example.app.MainActivity.main(MainActivity.java:5)
-    at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-    at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-    at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-    at java.base/java.lang.reflect.Method.invoke(Method.java:566)

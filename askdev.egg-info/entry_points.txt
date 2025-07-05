@@ -1,2 +1,3 @@
 [console_scripts]
-askdev = app:run_main
+ad = askdev.cli:run_main
+askdev = askdev.cli:run_main
