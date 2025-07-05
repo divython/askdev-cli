@@ -1,0 +1,10 @@
+README.md
+app.py
+pyproject.toml
+setup.py
+askdev.egg-info/PKG-INFO
+askdev.egg-info/SOURCES.txt
+askdev.egg-info/dependency_links.txt
+askdev.egg-info/entry_points.txt
+askdev.egg-info/requires.txt
+askdev.egg-info/top_level.txt

@@ -1,0 +1,2 @@
+[console_scripts]
+askdev = app:run_main

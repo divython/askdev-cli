@@ -1,0 +1,52 @@
+Metadata-Version: 2.4
+Name: askdev
+Version: 0.1.0
+Summary: Android Error CLI Assistant: Explain and fix Android errors from your terminal.
+Author: Divyanshu
+Author-email: Your Name <your@email.com>
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: typer[all]
+Requires-Dist: rich
+Dynamic: author
+Dynamic: requires-python
+
+# askdev: Android Error CLI Assistant
+
+askdev is a Python-based CLI tool that helps Android developers debug crash logs and exceptions directly from their terminal. It matches errors against a local database and (optionally) uses AI for suggestions.
+
+## Features
+- Explain Android errors from log files or direct input
+- Suggest fixes using a local error database
+- Optional `--ai` flag for LLM-based suggestions (OpenRouter/Ollama integration planned)
+- Beautiful output with Rich
+
+## Installation
+
+```sh
+pipx install .
+```
+
+## Usage
+
+```sh
+# Analyze log file
+askdev logcat.txt
+askdev crash_log.txt
+
+# Use AI suggestions
+askdev logcat.txt --ai
+
+# Direct text input
+askdev --text "java.lang.NullPointerException: Attempt to invoke virtual method"
+
+# Read from stdin
+cat logcat.txt | askdev --stdin
+adb logcat | askdev --stdin
+
+# Get help
+askdev --help
+```
+
+## Contributing
+Pull requests welcome!

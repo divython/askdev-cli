@@ -1,0 +1,562 @@
+{
+  "NullPointerException": {
+    "cause": "Attempting to use a null reference",
+    "suggestion": "Check if the object is null before calling methods on it. Use null checks or optional chaining.",
+    "link": "https://developer.android.com/reference/java/lang/NullPointerException"
+  },
+  "OutOfMemoryError": {
+    "cause": "Application ran out of memory",
+    "suggestion": "Optimize memory usage, reduce bitmap sizes, implement proper memory management, or increase heap size.",
+    "link": "https://developer.android.com/topic/performance/memory"
+  },
+  "ActivityNotFoundException": {
+    "cause": "Trying to start an activity that doesn't exist or isn't declared in manifest",
+    "suggestion": "Check if the activity is declared in AndroidManifest.xml and verify the intent is correct.",
+    "link": "https://developer.android.com/reference/android/content/ActivityNotFoundException"
+  },
+  "ClassNotFoundException": {
+    "cause": "Class not found at runtime",
+    "suggestion": "Check if the class is in the classpath and properly imported. Verify ProGuard/R8 rules if using code obfuscation.",
+    "link": "https://developer.android.com/reference/java/lang/ClassNotFoundException"
+  },
+  "SecurityException": {
+    "cause": "Missing required permission",
+    "suggestion": "Add the required permission to AndroidManifest.xml and request runtime permissions for dangerous permissions.",
+    "link": "https://developer.android.com/guide/topics/permissions/overview"
+  },
+  "NetworkOnMainThreadException": {
+    "cause": "Network operation attempted on main UI thread",
+    "suggestion": "Move network operations to background thread using AsyncTask, Thread, or modern approaches like Retrofit with coroutines.",
+    "link": "https://developer.android.com/reference/android/os/NetworkOnMainThreadException"
+  },
+  "IllegalStateException": {
+    "cause": "Method called at inappropriate time or object in wrong state",
+    "suggestion": "Check the lifecycle state of your activity/fragment and ensure methods are called at appropriate times.",
+    "link": "https://developer.android.com/reference/java/lang/IllegalStateException"
+  },
+  "WindowManager.BadTokenException": {
+    "cause": "Attempting to show dialog with invalid window token",
+    "suggestion": "Ensure activity is not finishing when showing dialog. Check if activity is still valid before showing popups.",
+    "link": "https://developer.android.com/reference/android/view/WindowManager.BadTokenException"
+  },
+  "Resources.NotFoundException": {
+    "cause": "Resource ID not found",
+    "suggestion": "Check if the resource exists in the correct folder and is properly referenced. Clean and rebuild project.",
+    "link": "https://developer.android.com/reference/android/content/res/Resources.NotFoundException"
+  },
+  "IllegalArgumentException": {
+    "cause": "Invalid argument passed to method",
+    "suggestion": "Validate input parameters before passing them to methods. Check for null values, empty strings, or invalid ranges.",
+    "link": "https://developer.android.com/reference/java/lang/IllegalArgumentException"
+  },
+  "SQLiteException": {
+    "cause": "Database operation failed",
+    "suggestion": "Check database schema, SQL syntax, and ensure database is properly initialized. Handle database versioning correctly.",
+    "link": "https://developer.android.com/reference/android/database/sqlite/SQLiteException"
+  },
+  "FileNotFoundException": {
+    "cause": "File not found at specified path",
+    "suggestion": "Check file path, permissions, and ensure file exists. Use proper file access methods and handle external storage permissions.",
+    "link": "https://developer.android.com/reference/java/io/FileNotFoundException"
+  },
+  "CalledFromWrongThreadException": {
+    "cause": "UI operation called from background thread",
+    "suggestion": "Use runOnUiThread(), Handler.post(), or AsyncTask to update UI from background threads.",
+    "link": "https://developer.android.com/reference/android/view/ViewRootImpl.CalledFromWrongThreadException"
+  },
+  "JSONException": {
+    "cause": "JSON parsing error",
+    "suggestion": "Validate JSON format, check for missing fields, and handle parsing errors gracefully with try-catch blocks.",
+    "link": "https://developer.android.com/reference/org/json/JSONException"
+  },
+  "IndexOutOfBoundsException": {
+    "cause": "Array or list index out of range",
+    "suggestion": "Check array/list bounds before accessing elements. Use size() method to validate indices.",
+    "link": "https://developer.android.com/reference/java/lang/IndexOutOfBoundsException"
+  },
+  "ConcurrentModificationException": {
+    "cause": "Collection modified while iterating",
+    "suggestion": "Use Iterator.remove() or copy collection before modification. Consider using ConcurrentHashMap for thread-safe operations.",
+    "link": "https://developer.android.com/reference/java/util/ConcurrentModificationException"
+  },
+  "InflateException": {
+    "cause": "Error inflating XML layout",
+    "suggestion": "Check XML syntax, ensure all referenced resources exist, and verify custom view constructors are properly implemented.",
+    "link": "https://developer.android.com/reference/android/view/InflateException"
+  },
+  "UnsupportedOperationException": {
+    "cause": "Method not supported or not implemented",
+    "suggestion": "Check if the operation is supported on the current API level or implement the required method.",
+    "link": "https://developer.android.com/reference/java/lang/UnsupportedOperationException"
+  },
+  "AndroidRuntimeException": {
+    "cause": "General Android runtime error",
+    "suggestion": "Check the specific error message for details. Common causes include UI thread violations or lifecycle issues.",
+    "link": "https://developer.android.com/reference/android/util/AndroidRuntimeException"
+  },
+  "NoClassDefFoundError": {
+    "cause": "Class definition not found at runtime",
+    "suggestion": "Ensure all dependencies are properly included in build.gradle. Check for missing libraries or ProGuard issues.",
+    "link": "https://developer.android.com/reference/java/lang/NoClassDefFoundError"
+  },
+  "RuntimeException": {
+    "cause": "General runtime exception",
+    "suggestion": "Check the specific error message and stack trace for the root cause. Common issues include null pointers or invalid states.",
+    "link": "https://developer.android.com/reference/java/lang/RuntimeException"
+  },
+  "TransactionTooLargeException": {
+    "cause": "Binder transaction size exceeds limit",
+    "suggestion": "Reduce data size passed between activities/services. Use smaller data objects or pass data through other means like files.",
+    "link": "https://developer.android.com/reference/android/os/TransactionTooLargeException"
+  },
+  "DeadObjectException": {
+    "cause": "Remote object is dead",
+    "suggestion": "Handle service disconnection gracefully. Implement service connection callbacks to detect and recover from dead objects.",
+    "link": "https://developer.android.com/reference/android/os/DeadObjectException"
+  },
+  "CursorIndexOutOfBoundsException": {
+    "cause": "Cursor index out of bounds",
+    "suggestion": "Check cursor position before accessing data. Use cursor.moveToFirst() and validate cursor.getCount() > 0.",
+    "link": "https://developer.android.com/reference/android/database/CursorIndexOutOfBoundsException"
+  },
+  "BadParcelableException": {
+    "cause": "Error reading/writing Parcelable object",
+    "suggestion": "Ensure Parcelable implementation is correct. Check readFromParcel() and writeToParcel() methods match exactly.",
+    "link": "https://developer.android.com/reference/android/os/BadParcelableException"
+  },
+  "NetworkSecurityException": {
+    "cause": "Network security policy violation",
+    "suggestion": "Check network security config. For HTTP requests, add network security config or use HTTPS. Handle cleartext traffic policy.",
+    "link": "https://developer.android.com/reference/android/security/NetworkSecurityException"
+  },
+  "SSLHandshakeException": {
+    "cause": "SSL handshake failed",
+    "suggestion": "Check SSL certificates, server configuration, and network connectivity. Verify certificate trust chain.",
+    "link": "https://developer.android.com/reference/javax/net/ssl/SSLHandshakeException"
+  },
+  "ConnectTimeoutException": {
+    "cause": "Connection timeout",
+    "suggestion": "Check network connectivity, increase timeout values, and implement retry logic. Verify server is reachable.",
+    "link": "https://developer.android.com/reference/java/net/ConnectTimeoutException"
+  },
+  "UnknownHostException": {
+    "cause": "Host name resolution failed",
+    "suggestion": "Check internet connectivity, DNS settings, and verify the host name is correct. Handle offline scenarios.",
+    "link": "https://developer.android.com/reference/java/net/UnknownHostException"
+  },
+  "SocketTimeoutException": {
+    "cause": "Socket operation timed out",
+    "suggestion": "Increase timeout values, check network stability, and implement proper error handling for network operations.",
+    "link": "https://developer.android.com/reference/java/net/SocketTimeoutException"
+  },
+  "ViewRootImpl$CalledFromWrongThreadException": {
+    "cause": "UI updated from background thread",
+    "suggestion": "Use Activity.runOnUiThread() or Handler.post() to update UI from background threads.",
+    "link": "https://developer.android.com/guide/components/processes-and-threads"
+  },
+  "RemoteException": {
+    "cause": "Error in remote procedure call",
+    "suggestion": "Handle IPC failures gracefully. Check if remote service is available and implement reconnection logic.",
+    "link": "https://developer.android.com/reference/android/os/RemoteException"
+  },
+  "PackageManager.NameNotFoundException": {
+    "cause": "Package or component not found",
+    "suggestion": "Check if the package is installed, verify component names, and handle missing dependencies gracefully.",
+    "link": "https://developer.android.com/reference/android/content/pm/PackageManager.NameNotFoundException"
+  },
+  "IntentSender.SendIntentException": {
+    "cause": "Error sending intent",
+    "suggestion": "Check intent configuration, verify target component exists, and handle intent failures properly.",
+    "link": "https://developer.android.com/reference/android/content/IntentSender.SendIntentException"
+  },
+  "ReceiverCallNotAllowedException": {
+    "cause": "BroadcastReceiver cannot perform operation",
+    "suggestion": "Don't perform long-running operations in BroadcastReceiver. Use JobScheduler or WorkManager for background work.",
+    "link": "https://developer.android.com/reference/android/content/ReceiverCallNotAllowedException"
+  },
+  "ServiceConnectionLeaked": {
+    "cause": "Service connection not properly unbound",
+    "suggestion": "Ensure unbindService() is called in onDestroy() or appropriate lifecycle method. Check for leaked service connections.",
+    "link": "https://developer.android.com/guide/components/bound-services"
+  },
+  "Unable to start activity ComponentInfo": {
+    "cause": "Activity cannot be started",
+    "suggestion": "Check if activity is declared in AndroidManifest.xml, verify intent filters, and ensure proper component registration.",
+    "link": "https://developer.android.com/guide/components/activities/intro-activities"
+  },
+  "Permission denied": {
+    "cause": "Missing required permission",
+    "suggestion": "Add permission to AndroidManifest.xml and request runtime permissions for dangerous permissions (API 23+).",
+    "link": "https://developer.android.com/guide/topics/permissions/overview"
+  },
+  "EACCES (Permission denied)": {
+    "cause": "File system permission denied",
+    "suggestion": "Check file permissions, use appropriate storage directories, and request storage permissions if needed.",
+    "link": "https://developer.android.com/training/data-storage"
+  },
+  "ENOENT (No such file or directory)": {
+    "cause": "File or directory not found",
+    "suggestion": "Check file paths, ensure directories exist, and handle missing files gracefully.",
+    "link": "https://developer.android.com/training/data-storage/files"
+  },
+  "android.os.NetworkOnMainThreadException": {
+    "cause": "Network operation attempted on main thread.",
+    "suggestion": "Move network operations to a background thread using AsyncTask, Handler, or coroutines.",
+    "link": "https://developer.android.com/reference/android/os/NetworkOnMainThreadException"
+  },
+  "android.view.InflateException": {
+    "cause": "Error inflating XML layout.",
+    "suggestion": "Check XML syntax, ensure all referenced resources exist, and verify custom view constructors.",
+    "link": "https://developer.android.com/reference/android/view/InflateException"
+  },
+  "android.database.sqlite.SQLiteConstraintException": {
+    "cause": "Database constraint violation (e.g., UNIQUE, NOT NULL).",
+    "suggestion": "Check database schema and input data. Handle constraint violations in code.",
+    "link": "https://developer.android.com/reference/android/database/sqlite/SQLiteConstraintException"
+  },
+  "android.database.sqlite.SQLiteDatabaseLockedException": {
+    "cause": "Database is locked by another thread or process.",
+    "suggestion": "Avoid long transactions and close database connections properly.",
+    "link": "https://developer.android.com/reference/android/database/sqlite/SQLiteDatabaseLockedException"
+  },
+  "android.content.ActivityNotFoundException": {
+    "cause": "Requested activity not found or not declared in manifest.",
+    "suggestion": "Check intent and ensure activity is declared in AndroidManifest.xml.",
+    "link": "https://developer.android.com/reference/android/content/ActivityNotFoundException"
+  },
+  "android.content.res.Resources$NotFoundException": {
+    "cause": "Resource ID not found.",
+    "suggestion": "Check if the resource exists and is referenced correctly. Clean and rebuild project.",
+    "link": "https://developer.android.com/reference/android/content/res/Resources.NotFoundException"
+  },
+  "android.view.WindowManager$BadTokenException": {
+    "cause": "Invalid window token when showing dialog or popup.",
+    "suggestion": "Ensure activity is not finishing and context is valid before showing dialogs.",
+    "link": "https://developer.android.com/reference/android/view/WindowManager.BadTokenException"
+  },
+  "android.os.TransactionTooLargeException": {
+    "cause": "Binder transaction size exceeds limit.",
+    "suggestion": "Reduce data size passed between activities/services. Use files or database for large data.",
+    "link": "https://developer.android.com/reference/android/os/TransactionTooLargeException"
+  },
+  "android.os.DeadObjectException": {
+    "cause": "Remote object is dead (e.g., service crashed).",
+    "suggestion": "Handle service disconnection and implement reconnection logic.",
+    "link": "https://developer.android.com/reference/android/os/DeadObjectException"
+  },
+  "android.database.CursorIndexOutOfBoundsException": {
+    "cause": "Cursor index out of bounds.",
+    "suggestion": "Check cursor position and count before accessing data.",
+    "link": "https://developer.android.com/reference/android/database/CursorIndexOutOfBoundsException"
+  },
+  "android.os.BadParcelableException": {
+    "cause": "Error reading/writing Parcelable object.",
+    "suggestion": "Ensure Parcelable implementation is correct and matches read/write order.",
+    "link": "https://developer.android.com/reference/android/os/BadParcelableException"
+  },
+  "android.security.NetworkSecurityException": {
+    "cause": "Network security policy violation.",
+    "suggestion": "Check network security config and use HTTPS. Handle cleartext traffic policy.",
+    "link": "https://developer.android.com/reference/android/security/NetworkSecurityException"
+  },
+  "javax.net.ssl.SSLHandshakeException": {
+    "cause": "SSL handshake failed.",
+    "suggestion": "Check SSL certificates, server configuration, and network connectivity.",
+    "link": "https://developer.android.com/reference/javax/net/ssl/SSLHandshakeException"
+  },
+  "java.net.ConnectTimeoutException": {
+    "cause": "Connection timeout.",
+    "suggestion": "Check network connectivity, increase timeout values, and implement retry logic.",
+    "link": "https://developer.android.com/reference/java/net/ConnectTimeoutException"
+  },
+  "java.net.UnknownHostException": {
+    "cause": "Host name resolution failed.",
+    "suggestion": "Check internet connectivity, DNS settings, and verify the host name is correct.",
+    "link": "https://developer.android.com/reference/java/net/UnknownHostException"
+  },
+  "java.net.SocketTimeoutException": {
+    "cause": "Socket operation timed out.",
+    "suggestion": "Increase timeout values, check network stability, and handle errors gracefully.",
+    "link": "https://developer.android.com/reference/java/net/SocketTimeoutException"
+  },
+  "android.content.pm.PackageManager$NameNotFoundException": {
+    "cause": "Package or component not found.",
+    "suggestion": "Check if the package is installed and component names are correct.",
+    "link": "https://developer.android.com/reference/android/content/pm/PackageManager.NameNotFoundException"
+  },
+  "android.content.IntentSender$SendIntentException": {
+    "cause": "Error sending intent.",
+    "suggestion": "Check intent configuration and target component. Handle intent failures properly.",
+    "link": "https://developer.android.com/reference/android/content/IntentSender.SendIntentException"
+  },
+  "android.content.ReceiverCallNotAllowedException": {
+    "cause": "BroadcastReceiver cannot perform operation.",
+    "suggestion": "Don't perform long-running operations in BroadcastReceiver. Use JobScheduler or WorkManager.",
+    "link": "https://developer.android.com/reference/android/content/ReceiverCallNotAllowedException"
+  },
+  "android.app.ServiceConnectionLeaked": {
+    "cause": "Service connection not properly unbound.",
+    "suggestion": "Ensure unbindService() is called in onDestroy() or appropriate lifecycle method.",
+    "link": "https://developer.android.com/guide/components/bound-services"
+  },
+  "android.app.DownloadManager$QueueException": {
+    "cause": "Error adding download to DownloadManager queue.",
+    "suggestion": "Check download request parameters and permissions. Ensure storage permissions are granted.",
+    "link": "https://developer.android.com/reference/android/app/DownloadManager"
+  },
+  "android.app.DownloadManager$RequestException": {
+    "cause": "Invalid request to DownloadManager.",
+    "suggestion": "Check URI, destination, and network type in DownloadManager.Request.",
+    "link": "https://developer.android.com/reference/android/app/DownloadManager.Request"
+  },
+  "android.app.NotificationManager$TooManyNotificationsException": {
+    "cause": "Exceeded system notification limit.",
+    "suggestion": "Cancel unused notifications and avoid spamming the notification tray.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.NotificationManager$NotificationTimeoutException": {
+    "cause": "Notification timed out before being shown.",
+    "suggestion": "Check notification posting logic and system performance.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.NotificationManager$NotificationSuppressedException": {
+    "cause": "Notification suppressed by system policy.",
+    "suggestion": "Check Do Not Disturb and notification policy settings.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.NotificationManager$NotificationImportanceException": {
+    "cause": "Notification importance level error.",
+    "suggestion": "Set appropriate importance for notification channels.",
+    "link": "https://developer.android.com/reference/android/app/NotificationChannel"
+  },
+  "android.app.NotificationManager$NotificationVisibilityException": {
+    "cause": "Notification visibility error.",
+    "suggestion": "Set correct visibility for notifications (public, private, secret).",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationSoundException": {
+    "cause": "Notification sound error.",
+    "suggestion": "Check sound URI and permissions. Use valid audio files.",
+    "link": "https://developer.android.com/reference/android/app/NotificationChannel"
+  },
+  "android.app.NotificationManager$NotificationVibrationException": {
+    "cause": "Notification vibration error.",
+    "suggestion": "Check vibration pattern and device settings.",
+    "link": "https://developer.android.com/reference/android/app/NotificationChannel"
+  },
+  "android.app.NotificationManager$NotificationLightException": {
+    "cause": "Notification light error.",
+    "suggestion": "Check light color and timing settings for notifications.",
+    "link": "https://developer.android.com/reference/android/app/NotificationChannel"
+  },
+  "android.app.NotificationManager$NotificationBadgeException": {
+    "cause": "Notification badge error.",
+    "suggestion": "Check badge icon and count settings.",
+    "link": "https://developer.android.com/reference/android/app/NotificationChannel"
+  },
+  "android.app.NotificationManager$NotificationGroupException": {
+    "cause": "Notification group error.",
+    "suggestion": "Check group key and summary notification logic.",
+    "link": "https://developer.android.com/reference/android/app/NotificationChannelGroup"
+  },
+  "android.app.NotificationManager$NotificationStyleException": {
+    "cause": "Notification style error.",
+    "suggestion": "Use supported notification styles (BigText, Inbox, etc.).",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationActionException": {
+    "cause": "Notification action error.",
+    "suggestion": "Check PendingIntent and action configuration.",
+    "link": "https://developer.android.com/reference/android/app/Notification.Action"
+  },
+  "android.app.NotificationManager$NotificationInputException": {
+    "cause": "Notification input error.",
+    "suggestion": "Check RemoteInput configuration for inline replies.",
+    "link": "https://developer.android.com/reference/android/app/RemoteInput"
+  },
+  "android.app.NotificationManager$NotificationForegroundServiceException": {
+    "cause": "Foreground service notification error.",
+    "suggestion": "Ensure notification is shown for foreground services.",
+    "link": "https://developer.android.com/guide/components/foreground-services"
+  },
+  "android.app.NotificationManager$NotificationPermissionException": {
+    "cause": "Notification permission error.",
+    "suggestion": "Request notification permission on Android 13+.",
+    "link": "https://developer.android.com/develop/ui/views/notifications/notification-permission"
+  },
+  "android.app.NotificationManager$NotificationCategoryException": {
+    "cause": "Notification category error.",
+    "suggestion": "Set correct category for notifications (message, alarm, etc.).",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationIntentException": {
+    "cause": "Notification intent error.",
+    "suggestion": "Check intent extras and PendingIntent configuration.",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationIconException": {
+    "cause": "Notification icon error.",
+    "suggestion": "Use valid icon resources and correct icon sizes.",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationColorException": {
+    "cause": "Notification color error.",
+    "suggestion": "Set valid color values for notifications.",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationPriorityException": {
+    "cause": "Notification priority error.",
+    "suggestion": "Set appropriate priority for notifications.",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationTimeoutException": {
+    "cause": "Notification timeout error.",
+    "suggestion": "Set valid timeout values for notifications.",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationVisibilityException": {
+    "cause": "Notification visibility error.",
+    "suggestion": "Set correct visibility for notifications.",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationGroupAlertBehaviorException": {
+    "cause": "Notification group alert behavior error.",
+    "suggestion": "Set valid group alert behavior for notifications.",
+    "link": "https://developer.android.com/reference/android/app/Notification"
+  },
+  "android.app.NotificationManager$NotificationBubbleException": {
+    "cause": "Notification bubble error.",
+    "suggestion": "Check bubble metadata and permissions.",
+    "link": "https://developer.android.com/guide/topics/ui/bubbles"
+  },
+  "android.app.NotificationManager$NotificationShortcutException": {
+    "cause": "Notification shortcut error.",
+    "suggestion": "Check shortcut configuration and permissions.",
+    "link": "https://developer.android.com/guide/topics/ui/shortcuts"
+  },
+  "android.app.NotificationManager$NotificationSnoozeException": {
+    "cause": "Notification snooze error.",
+    "suggestion": "Check snooze duration and system support.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.NotificationManager$NotificationRestoreException": {
+    "cause": "Notification restore error.",
+    "suggestion": "Check backup and restore logic for notifications.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.NotificationManager$NotificationBackupException": {
+    "cause": "Notification backup error.",
+    "suggestion": "Check backup logic and permissions for notifications.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.NotificationManager$NotificationRestoreFailedException": {
+    "cause": "Notification restore failed error.",
+    "suggestion": "Handle restore failures and provide user feedback.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.NotificationManager$NotificationBackupFailedException": {
+    "cause": "Notification backup failed error.",
+    "suggestion": "Handle backup failures and provide user feedback.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.NotificationManager$NotificationRestoreNotSupportedException": {
+    "cause": "Notification restore not supported error.",
+    "suggestion": "Check device and system support for notification restore.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.NotificationManager$NotificationBackupNotSupportedException": {
+    "cause": "Notification backup not supported error.",
+    "suggestion": "Check device and system support for notification backup.",
+    "link": "https://developer.android.com/reference/android/app/NotificationManager"
+  },
+  "android.app.UsageStatsManager$UsageStatsException": {
+    "cause": "Error retrieving app usage statistics.",
+    "suggestion": "Check usage stats permissions and API usage.",
+    "link": "https://developer.android.com/reference/android/app/usage/UsageStatsManager"
+  },
+  "android.app.usage.UsageEvents$EventException": {
+    "cause": "Error processing usage event.",
+    "suggestion": "Check event type and data integrity.",
+    "link": "https://developer.android.com/reference/android/app/usage/UsageEvents.Event"
+  },
+  "android.app.job.JobScheduler$JobSchedulerException": {
+    "cause": "JobScheduler error.",
+    "suggestion": "Check job configuration and constraints.",
+    "link": "https://developer.android.com/reference/android/app/job/JobScheduler"
+  },
+  "android.app.job.JobParameters$JobParametersException": {
+    "cause": "Invalid job parameters.",
+    "suggestion": "Check extras and job parameters for correctness.",
+    "link": "https://developer.android.com/reference/android/app/job/JobParameters"
+  },
+  "android.app.job.JobService$JobServiceException": {
+    "cause": "JobService error.",
+    "suggestion": "Check service implementation and lifecycle methods.",
+    "link": "https://developer.android.com/reference/android/app/job/JobService"
+  },
+  "android.app.backup.BackupManager$BackupException": {
+    "cause": "Backup operation failed.",
+    "suggestion": "Check backup agent implementation and permissions.",
+    "link": "https://developer.android.com/reference/android/app/backup/BackupManager"
+  },
+  "android.app.backup.RestoreSession$RestoreException": {
+    "cause": "Restore operation failed.",
+    "suggestion": "Check restore agent implementation and data integrity.",
+    "link": "https://developer.android.com/reference/android/app/backup/RestoreSession"
+  },
+  "android.app.admin.DevicePolicyManager$DevicePolicyException": {
+    "cause": "Device policy error.",
+    "suggestion": "Check device admin configuration and permissions.",
+    "link": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager"
+  },
+  "android.app.admin.DeviceAdminReceiver$DeviceAdminException": {
+    "cause": "Device admin receiver error.",
+    "suggestion": "Check receiver registration and intent handling.",
+    "link": "https://developer.android.com/reference/android/app/admin/DeviceAdminReceiver"
+  },
+  "android.app.admin.SecurityLog$SecurityLogException": {
+    "cause": "Security log error.",
+    "suggestion": "Check security log permissions and API usage.",
+    "link": "https://developer.android.com/reference/android/app/admin/SecurityLog"
+  },
+  "android.app.admin.DevicePolicyManager$PasswordComplexityException": {
+    "cause": "Password complexity policy error.",
+    "suggestion": "Set valid password complexity requirements.",
+    "link": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager"
+  },
+  "android.app.admin.DevicePolicyManager$PasswordExpirationException": {
+    "cause": "Password expiration policy error.",
+    "suggestion": "Set valid password expiration policy.",
+    "link": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager"
+  },
+  "android.app.admin.DevicePolicyManager$PasswordHistoryException": {
+    "cause": "Password history policy error.",
+    "suggestion": "Set valid password history length.",
+    "link": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager"
+  },
+  "android.app.admin.DevicePolicyManager$PasswordQualityException": {
+    "cause": "Password quality policy error.",
+    "suggestion": "Set valid password quality requirements.",
+    "link": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager"
+  },
+  "android.app.admin.DevicePolicyManager$PasswordResetException": {
+    "cause": "Password reset policy error.",
+    "suggestion": "Set valid password reset policy.",
+    "link": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager"
+  },
+  "android.app.admin.DevicePolicyManager$PasswordSetException": {
+    "cause": "Password set policy error.",
+    "suggestion": "Set valid password set policy.",
+    "link": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager"
+  },
+  "android.app.admin.DevicePolicyManager$PasswordUnlockException": {
+    "cause": "Password unlock policy error.",
+    "suggestion": "Set valid password unlock policy.",
+    "link": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager"
+  },
+  "android.app.admin.DevicePolicyManager$PasswordValidationException": {
+    "cause": "Password validation policy error.",
+    "suggestion": "Set valid password validation policy.",
+    "link": "https://developer.android.com/reference/android/app/admin/DevicePolicyManager"
+  }
+}
